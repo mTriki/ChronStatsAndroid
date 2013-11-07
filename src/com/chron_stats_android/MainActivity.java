@@ -31,7 +31,7 @@ public class MainActivity extends Activity implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle presses on the action bar items
 		switch (item.getItemId()) {
-		case R.id.button_add:
+		case R.id.action_add:
 			addAction();
 			return true;
 		case R.id.action_settings:
@@ -49,6 +49,14 @@ public class MainActivity extends Activity implements
 		PersonListFragment personListFragment = (PersonListFragment) getFragmentManager()
 				.findFragmentById(R.id.fragment_personList);
 		personListFragment.setListener(this);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		PersonListFragment plf = (PersonListFragment) getFragmentManager()
+				.findFragmentById(R.id.fragment_personList);
+		plf.refreshList();
 	}
 
 	/**
@@ -78,8 +86,8 @@ public class MainActivity extends Activity implements
 			editFragment.updateContent(person);
 		} else if (addFragment != null) {
 			/*
-			 * AddFragment est dans le layout,  il faut alors le remplacer par
-			 * un EditFragment
+			 * AddFragment est dans le layout, il faut alors le remplacer par un
+			 * EditFragment
 			 */
 			FragmentTransaction ft = fm.beginTransaction();
 			editFragment = new EditFragment();

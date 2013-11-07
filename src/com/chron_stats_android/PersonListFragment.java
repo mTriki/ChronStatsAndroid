@@ -31,20 +31,10 @@ public class PersonListFragment extends ListFragment implements GetJSONTask.Call
 		gson = new Gson();
 
 		adapter = new PersonAdapter(getActivity());
-
-		URL personsURL = null;
-		try {
-			personsURL = new URL(MainActivity.SERVER_URL+"users"+MainActivity.JSON_EXTENSION);
-			Log.d("DEBUG - PersonListFragment", "URL: "+personsURL);
-			GetJSONTask task = new GetJSONTask();
-			task.setListener(this);
-			task.execute(personsURL);
-		} catch (Exception e) {
-			Log.e("GetJSON", "GetJSONTask: "+e.getMessage());
-		}
 	}
 	
 	public void refreshList() {
+		adapter.clear();
 		URL personsURL = null;
 		try {
 			personsURL = new URL(MainActivity.SERVER_URL+"users"+MainActivity.JSON_EXTENSION);
@@ -120,6 +110,10 @@ public class PersonListFragment extends ListFragment implements GetJSONTask.Call
 		public void addItem(Person person) {
 			list.add(person);
 			notifyDataSetChanged();
+		}
+		
+		public void clear() {
+			list.clear();
 		}
 
 		@Override

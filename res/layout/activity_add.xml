@@ -5,7 +5,7 @@
     android:orientation="vertical" >
     
 	<fragment
-	    class="com.chron_stats_android.EditFragment"
+	    class="com.chron_stats_android.AddFragment"
         android:id="@+id/fragment_add"
         android:layout_width="fill_parent" 
         android:layout_height="fill_parent" />

@@ -43,14 +43,14 @@ public class EditFragment extends Fragment implements
 						editPerson();
 					}
 				});
-		
+
 		((Button) getActivity().findViewById(R.id.button_delete))
-		.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				deletePerson();
-			}
-		});
+				.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						deletePerson();
+					}
+				});
 	}
 
 	public void editPerson() {
@@ -100,7 +100,6 @@ public class EditFragment extends Fragment implements
 
 	@Override
 	public void callback(String message) {
-		Toast.makeText(getActivity(), message, Toast.LENGTH_LONG)
-				.show();
+		Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
 	}
 }
