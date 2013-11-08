@@ -23,7 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:inputType="text"
-        android:enabled="false"
         android:maxEms="6"
         android:minEms="6"
         android:textSize="20sp" />
@@ -37,7 +36,6 @@
         android:layout_marginTop="4dp"
         android:imeOptions="actionSend"
         android:inputType="textEmailAddress"
-        android:enabled="false"
         android:maxEms="18"
         android:minEms="18"
         android:textSize="20sp" />

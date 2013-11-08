@@ -7,6 +7,7 @@ import com.chron_stats_android.tasks.Request;
 import com.chron_stats_android.tasks.SendJSONTask;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,8 @@ public class EditFragment extends Fragment implements
 					@Override
 					public void onClick(View v) {
 						editPerson();
+						refreshList();
+						discardFragment();
 					}
 				});
 
@@ -49,8 +52,33 @@ public class EditFragment extends Fragment implements
 					@Override
 					public void onClick(View v) {
 						deletePerson();
+						refreshList();
+						discardFragment();
 					}
 				});
+		
+		/*
+		 *  if tablet display (fragment is in MainActivity),
+		 *  update content when created
+		 */
+		User person = (User)getArguments().getSerializable("person");
+		if (person != null) {
+			updateContent(person);
+		}
+	}
+	
+	public void refreshList() {
+		Context context = getActivity();
+		if (context instanceof MainActivity) {
+			((MainActivity)context).refreshList();
+		}
+	}
+	
+	public void discardFragment() {
+		Context context = getActivity();
+		if (context instanceof MainActivity) {
+			((MainActivity)context).discardEditFragment();
+		}
 	}
 
 	public void editPerson() {

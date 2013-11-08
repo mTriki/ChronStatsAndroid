@@ -6,6 +6,7 @@ import com.chron_stats_android.tasks.Request;
 import com.chron_stats_android.tasks.SendJSONTask;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,8 +40,24 @@ public class AddFragment extends Fragment implements
 					@Override
 					public void onClick(View v) {
 						addPerson();
+						refreshList();
+						discardFragment();
 					}
 				});
+	}
+	
+	public void refreshList() {
+		Context context = getActivity();
+		if (context instanceof MainActivity) {
+			((MainActivity)context).refreshList();
+		}
+	}
+	
+	public void discardFragment() {
+		Context context = getActivity();
+		if (context instanceof MainActivity) {
+			((MainActivity)context).discardAddFragment();
+		}
 	}
 
 	public void addPerson() {
