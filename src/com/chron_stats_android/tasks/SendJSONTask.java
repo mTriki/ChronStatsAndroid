@@ -84,16 +84,19 @@ public class SendJSONTask extends AsyncTask<Request, Void, Void> {
 				HttpRequestBase request = null;
 				try {
 					if (requests[i].getMethod().equals("PUT")) {
+						// Edition d'utilisateur.
 						request = new HttpPut(requests[i].getURI());
 						((HttpPut) request).setEntity(new ByteArrayEntity(
 								requests[i].getPersonJSON().getBytes("UTF-8")));
 						editNumber++;
 					} else if (requests[i].getMethod().equals("POST")) {
+						// Ajout d'utilisateur.
 						request = new HttpPost(requests[i].getURI());
 						((HttpPost) request).setEntity(new ByteArrayEntity(
 								requests[i].getPersonJSON().getBytes("UTF-8")));
 						createNumber++;
 					} else if (requests[i].getMethod().equals("DELETE")) {
+						// Suppression d'utilisateur.
 						request = new HttpDelete(requests[i].getURI());
 						deleteNumber++;
 					}
