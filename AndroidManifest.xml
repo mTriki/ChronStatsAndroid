@@ -25,6 +25,7 @@
         </activity>
         <activity android:name="com.chron_stats_android.MainActivity"></activity>
         <activity android:name="com.chron_stats_android.EditActivity"></activity>
+        <activity android:name="com.chron_stats_android.AddActivity"></activity>
     </application>
 
 </manifest>

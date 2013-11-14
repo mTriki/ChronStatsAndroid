@@ -4,9 +4,9 @@
     android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools">
     
     <fragment
-        class="com.chron_stats_android.PersonListFragment"
-        android:id="@+id/fragment_personList"
+        class="com.chron_stats_android.UserListFragment"
+        android:id="@+id/fragment_userList"
         android:layout_width="match_parent" 
-        android:layout_height="match_parent" tools:layout="@layout/list_item_person"/>
+        android:layout_height="match_parent" tools:layout="@layout/list_item_user"/>
 
 </FrameLayout>

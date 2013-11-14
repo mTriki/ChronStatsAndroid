@@ -9,12 +9,12 @@
     <!-- PlayerListFragment -->
 
     <fragment
-        android:id="@+id/fragment_personList"
+        android:id="@+id/fragment_userList"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="4"
-        class="com.chron_stats_android.PersonListFragment"
-        tools:layout="@layout/list_item_person" />
+        class="com.chron_stats_android.UserListFragment"
+        tools:layout="@layout/list_item_user" />
 
     <!-- FrameLayout holding add or edit fragment -->
 
